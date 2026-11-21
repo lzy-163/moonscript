@@ -15,13 +15,13 @@ jobs:
         install: gcc make curl
 
     - run: gcc -v
+      shell: msys2 {0}
 
     - name: Setup Lua
-    - run: |
+      run: |
         curl -O https://www.lua.org/ftp/lua-5.1.5.tar.gz
-        tar -xZf lua-5.1.5.tar.gz
+        tar -xzf lua-5.1.5.tar.gz
+      shell: msys2 {0}
 
     - name: list files
       run: Get-ChildItem
-
-
